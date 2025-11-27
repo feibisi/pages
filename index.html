@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiCode Pages - 测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px 40px;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .logo {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .info {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+            border-radius: 5px;
+        }
+        
+        .info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .info code {
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            color: #d63384;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1>FeiCode Pages</h1>
+        <p>恭喜！你的 Forgejo Pages 已成功部署！</p>
+        
+        <div class="badge">✨ 运行中</div>
+        <div class="badge">🎉 feibisi.net</div>
+        
+        <div class="info">
+            <h3>📋 访问信息</h3>
+            <p><strong>仓库地址：</strong><br>
+            <code>https://feicode.com/feiCode/pages</code></p>
+            
+            <p><strong>Pages 地址：</strong><br>
+            <code>https://feiCode.feibisi.net</code></p>
+            
+            <p><strong>更新方式：</strong><br>
+            推送代码到 <code>main</code> 分支，Pages 会自动更新</p>
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 0.9em; color: #999;">
+            由 <a href="https://feicode.com" target="_blank">菲码源库</a> 强力驱动<br>
+            使用 <a href="https://codeberg.org/Codeberg/pages-server" target="_blank">Codeberg Pages Server</a>
+        </p>
+    </div>
+</body>
+</html>
