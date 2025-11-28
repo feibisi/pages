@@ -1,153 +1,214 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FeiCode Pages - 测试页面</title>
+    <title>feiCode Pages</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #0969da;
+            --text-color: #24292f;
+            --bg-color: #f6f8fa;
+            --card-bg: #ffffff;
+            --border-color: #d0d7de;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-color);
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
             padding: 20px;
+            line-height: 1.5;
         }
-        
+
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 60px 40px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 40px;
             max-width: 600px;
+            width: 100%;
             text-align: center;
+            box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
         }
-        
-        h1 {
-            color: #333;
-            font-size: 3em;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-        
+
         .logo {
-            font-size: 5em;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
         }
-        
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
         p {
-            color: #666;
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 30px;
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #57606a;
         }
-        
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin: 10px;
-            animation: pulse 2s infinite;
-        }
-        
-        .info {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin-top: 30px;
+
+        .domain-info {
+            background-color: #ddf4ff;
+            border: 1px solid #54aeff;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 24px;
             text-align: left;
-            border-radius: 5px;
+            font-size: 14px;
+            color: #0969da;
         }
-        
-        .info h3 {
-            color: #667eea;
-            margin-bottom: 10px;
+
+        .domain-info strong {
+            color: #24292f;
         }
-        
-        .info code {
-            background: #e9ecef;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-family: "Courier New", monospace;
-            color: #d63384;
+
+        .code-block {
+            background-color: #f6f8fa;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            text-align: left;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            font-size: 14px;
+            margin-bottom: 24px;
+            overflow-x: auto;
         }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-        
-        a {
-            color: #667eea;
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.2s;
         }
-        
-        a:hover {
+
+        .btn:hover {
+            background-color: #0969da;
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 48px;
+            font-size: 12px;
+            color: #8c959f;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .beian-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.8;
+            opacity: 0.8;
+            font-size: 11px;
+        }
+
+        .beian-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .beian-info svg {
+            flex-shrink: 0;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="logo">🚀</div>
-        <h1>FeiCode Pages</h1>
-        <p>恭喜！你的 Forgejo Pages 已成功部署！</p>
-        
-        <div class="badge">✨ 运行中</div>
-        <div class="badge">🎉 feibisi.net</div>
-        
-        <div class="info">
-            <h3>📋 访问信息</h3>
-            <p><strong>仓库地址：</strong><br>
-            <code>https://feicode.com/feiCode/pages</code></p>
-            
-            <p><strong>Pages 地址：</strong><br>
-            <code>https://feiCode.feibisi.net</code></p>
-            
-            <p><strong>更新方式：</strong><br>
-            推送代码到 <code>main</code> 分支，Pages 会自动更新</p>
+        <img src="https://feicode.com/assets/img/favicon.svg" alt="FeiCode Logo" class="logo">
+        <h1>feiCode Pages 运行正常 ✅ </h1>
+        <p>您的静态网站已成功部署。现在可以开始构建您的精彩内容了。</p>
+
+        <div class="domain-info">
+            <p style="margin: 0 0 8px 0;"><strong>服务域名：</strong></p>
+            <ul style="margin: 0; padding-left: 20px;">
+                <li>中国区：<code>feibisi.net</code> (已备案)</li>
+                <li>国际区：<code>feibisi.org</code></li>
+            </ul>
         </div>
-        
-        <p style="margin-top: 30px; font-size: 0.9em; color: #999;">
-            由 <a href="https://feicode.com" target="_blank">菲码源库</a> 强力驱动<br>
-            使用 <a href="https://codeberg.org/Codeberg/pages-server" target="_blank">Codeberg Pages Server</a>
-        </p>
+
+        <div class="code-block">
+            # 更新您的网站<br>
+            git add .<br>
+            git commit -m "Initial commit"<br>
+            git push origin main
+        </div>
+
+        <a href="https://feicode.com" class="btn">访问 feiCode.com</a>
+
+        <div class="footer">
+            <p>菲码源库 feiCode &nbsp;|&nbsp; 基于 Forgejo 构建 &nbsp;|&nbsp; 专业 • 开放 • 安全</p>
+            <p>&copy; 2025 汉中菲比斯网络技术有限公司 &nbsp;</p>
+            <div class="beian-info">
+                <span>
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor">
+                        <path
+                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" />
+                        <path
+                            d="M512 140c-205.4 0-372 166.6-372 372s166.6 372 372 372 372-166.6 372-372-166.6-372-372-372z m0 668c-163.6 0-296-132.4-296-296s132.4-296 296-296 296 132.4 296 296-132.4 296-296 296z"
+                            opacity=".2" />
+                    </svg>
+                    备案号：陕ICP备15002899号-4
+                </span>
+                <span>
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor">
+                        <path
+                            d="M512 0C320 0 128 64 64 128v256c0 320 192 512 448 640 256-128 448-320 448-640V128c-64-64-256-128-448-128z"
+                            fill="#0277bd" />
+                        <path d="M256 320h512v128H256z" fill="#fff" />
+                        <path d="M512 576l128-128H384z" fill="#fff" />
+                    </svg>
+                    陕公网安备 61070202000234 号
+                </span>
+                <span>
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor">
+                        <path
+                            d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zM640 832H384v-64h256v64z m0-128H384v-64h256v64z m0-128H384v-64h256v64z m0-128H384v-64h256v64z" />
+                    </svg>
+                    增值电信业务经营许可证：陕 B2-20210198
+                </span>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
