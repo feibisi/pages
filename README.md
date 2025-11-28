@@ -2,18 +2,18 @@
 
 feiCode Pages 是基于 Forgejo 构建的免费静态网站托管服务，类似于 GitHub Pages。
 
-## 🌟 特点
+## 特点
 
 - **专业** - 基于 Forgejo 开源平台，稳定可靠
 - **开放** - 完全开源，透明可信
 - **安全** - 完善的备案和安全保障
 
-## 🌐 访问地址
+## 访问地址
 
 - **中国区域**：`*.feibisi.net`（已备案）
 - **国际区域**：`*.feibisi.org`
 
-## 🚀 快速开始
+## 快速开始
 
 ### 1. 创建仓库
 
@@ -37,7 +37,7 @@ git push origin main
 - 中国区：`https://<username>.feibisi.net`
 - 国际区：`https://<username>.feibisi.org`
 
-## 📁 目录结构
+## 目录结构
 
 ```
 .
@@ -46,7 +46,7 @@ git push origin main
 └── user-guide.md      # 用户指南
 ```
 
-## 🔧 配置说明
+## 配置说明
 
 ### 自定义域名
 
@@ -59,13 +59,13 @@ git push origin main
 
 默认使用 `main` 分支作为发布源，您也可以在仓库设置中修改。
 
-## 📖 更多信息
+## 更多信息
 
 - **仓库地址**：[https://feicode.com/feiCode/pages](https://feicode.com/feiCode/pages)
 - **用户指南**：查看 [user-guide.md](./user-guide.md)
 - **技术支持**：访问 [feiCode](https://feicode.com)
 
-## 📝 许可证
+## 许可证
 
 本项目基于 Forgejo 构建，遵循开源协议。
 
