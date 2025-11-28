@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>feiCode Pages</title>
+    <link rel="icon" href="https://feicode.com/assets/img/favicon.svg">
     <style>
         :root {
             --primary-color: #0969da;
@@ -12,6 +13,43 @@
             --bg-color: #f6f8fa;
             --card-bg: #ffffff;
             --border-color: #d0d7de;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #58a6ff;
+                --text-color: #c9d1d9;
+                --bg-color: #0d1117;
+                --card-bg: #161b22;
+                --border-color: #30363d;
+            }
+
+            p {
+                color: #8b949e;
+            }
+
+            .domain-info {
+                background-color: rgba(56, 139, 253, 0.15);
+                border-color: rgba(56, 139, 253, 0.4);
+                color: #58a6ff;
+            }
+
+            .domain-info strong {
+                color: #c9d1d9;
+            }
+
+            .code-block {
+                background-color: #0d1117;
+                border-color: #30363d;
+            }
+
+            .footer {
+                color: #8b949e;
+            }
+
+            code {
+                background-color: rgb(0 0 0 / 30%);
+            }
         }
 
         body {
@@ -58,7 +96,6 @@
         }
 
         .domain-info {
-            background-color: #ddf4ff;
             border: 1px solid #54aeff;
             border-radius: 6px;
             padding: 12px;
@@ -68,12 +105,17 @@
             color: #0969da;
         }
 
-        .domain-info strong {
-            color: #24292f;
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: rgba(175, 184, 193, 0.2);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
         }
 
         .code-block {
-            background-color: #f6f8fa;
             border: 1px solid var(--border-color);
             border-radius: 6px;
             padding: 16px;
