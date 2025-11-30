@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Internal Server Error - feiCode Pages</title>
+    <link rel="icon" href="https://feicode.com/assets/img/favicon.svg">
+    <style>
+        :root {
+            --primary-color: #0969da;
+            --text-color: #24292f;
+            --bg-color: #f6f8fa;
+            --card-bg: #ffffff;
+            --border-color: #d0d7de;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #58a6ff;
+                --text-color: #c9d1d9;
+                --bg-color: #0d1117;
+                --card-bg: #161b22;
+                --border-color: #30363d;
+            }
+
+            p {
+                color: #8b949e;
+            }
+
+            .domain-info {
+                background-color: rgba(56, 139, 253, 0.15);
+                border-color: rgba(56, 139, 253, 0.4);
+                color: #58a6ff;
+            }
+
+            .domain-info strong {
+                color: #c9d1d9;
+            }
+
+            .code-block {
+                background-color: #0d1117;
+                border-color: #30363d;
+            }
+
+            .footer {
+                color: #8b949e;
+            }
+
+            code {
+                background-color: rgb(0 0 0 / 30%);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #57606a;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0969da;
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 48px;
+            font-size: 12px;
+            color: #8c959f;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://feicode.com/assets/img/favicon.svg" alt="FeiCode Logo" class="logo">
+        <h1>500 服务器内部错误</h1>
+        <p>服务器遇到错误，无法完成您的请求。</p>
+
+        <a href="/" class="btn">返回首页</a>
+
+        <div class="footer">
+            <p>菲码源库 feiCode &nbsp;|&nbsp; 基于 Forgejo 构建 &nbsp;|&nbsp; 专业 • 开放 • 安全</p>
+            <p>&copy; 2025 汉中菲比斯网络技术有限公司 &nbsp;</p>
+        </div>
+    </div>
+</body>
+
+</html>
