@@ -1,0 +1,41 @@
+name: giteabot maintenance 试点
+
+on:
+  workflow_dispatch:
+
+jobs:
+  giteabot-maintenance:
+    runs-on: ubuntu-22.04
+    container:
+      image: golang:1.26
+    steps:
+
+
+      - name: Run giteabot maintenance mode
+        env:
+          USER: root
+          HOME: /root
+          GOPROXY: https://goproxy.cn,direct
+          GOSUMDB: sum.golang.org
+          GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          GITEABOT_REPO: ${{ github.repository }}
+          GITEABOT_PROVIDER: gitea
+          GITEABOT_API_BASE: ${{ github.server_url }}
+          GITEABOT_MODE: maintenance
+          GITEABOT_FEATURE_BACKPORT: "false"
+          GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"
+          GITEABOT_FEATURE_MERGE_QUEUE: "false"
+          GITEABOT_FEATURE_MILESTONES: "false"
+          GITEABOT_FEATURE_COMMENTS: "false"
+          GITEABOT_FEATURE_LAST_CALL: "false"
+          GITEABOT_FEATURE_LGTM: "false"
+          GITEABOT_FEATURE_PR_ACTIONS: "false"
+          GITEABOT_FEATURE_LOCKING: "true"
+          GITEABOT_FEATURE_FEEDBACK: "true"
+          GITEABOT_LABEL_NEEDS_FEEDBACK: "issue/needs-feedback"
+        run: |
+          export USER=root HOME=/root
+          git clone https://feicode.com/feiCode/giteabot.git /tmp/giteabot
+          cd /tmp/giteabot
+          git checkout 9beb4bd4902e657061484a5b5012e9bd0b27a794
+          go run .

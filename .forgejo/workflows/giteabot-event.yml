@@ -1,0 +1,59 @@
+name: giteabot PR 试点
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - labeled
+      - unlabeled
+      - edited
+      - review_requested
+      - review_request_removed
+      - closed
+  pull_request_review:
+    types:
+      - submitted
+      - dismissed
+      - edited
+
+jobs:
+  giteabot:
+    runs-on: ubuntu-22.04
+    container:
+      image: golang:1.26
+    steps:
+
+
+      - name: Run giteabot event mode
+        env:
+          USER: root
+          HOME: /root
+          GOPROXY: https://goproxy.cn,direct
+          GOSUMDB: sum.golang.org
+          GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          GITEABOT_REPO: ${{ github.repository }}
+          GITEABOT_PROVIDER: gitea
+          GITEABOT_API_BASE: ${{ github.server_url }}
+          GITEABOT_MODE: event
+          GITEABOT_EVENT_PATH: ${{ github.event_path }}
+          GITEABOT_EVENT_NAME: pull_request
+          GITEABOT_FEATURE_BACKPORT: "false"
+          GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"
+          GITEABOT_FEATURE_MERGE_QUEUE: "false"
+          GITEABOT_FEATURE_MILESTONES: "false"
+          GITEABOT_FEATURE_COMMENTS: "false"
+          GITEABOT_FEATURE_LOCKING: "false"
+          GITEABOT_FEATURE_FEEDBACK: "false"
+          GITEABOT_FEATURE_LAST_CALL: "false"
+          GITEABOT_FEATURE_LGTM: "true"
+          GITEABOT_FEATURE_PR_ACTIONS: "true"
+          GITEABOT_LABEL_UPDATE_BRANCH: "giteabot/update-branch"
+          GITEABOT_LABEL_LGTM_PREFIX: "lgtm/"
+        run: |
+          export USER=root HOME=/root
+          git clone https://feicode.com/feiCode/giteabot.git /tmp/giteabot
+          cd /tmp/giteabot
+          git checkout 9beb4bd4902e657061484a5b5012e9bd0b27a794
+          go run .
